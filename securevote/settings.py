@@ -126,3 +126,4 @@ STATIC_URL = '/static/'
 
 INSTALLED_APPS.append('polls')
 INSTALLED_APPS.append('material')
+INSTALLED_APPS.append('material.frontend')
