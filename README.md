@@ -9,8 +9,11 @@ While learning and playing around with GnuPG project, this idea first came to mi
 ## Dependencies
 
 Python >= 3.5
+
 Django >= 1.9
+
 PostgreSQL >= 9.6
+
 GnuPG >= 0.9
 
 
