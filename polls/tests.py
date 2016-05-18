@@ -27,7 +27,5 @@ class TestCase(TestCase):
         random_poll = random_choice(self.polls)
         self.assertIsInstance(random_poll, Poll)
 
-        random_poll.title = 'foobar'
-        random_poll.description = 'foobar'
-        self.assertEqual(random_poll.title, 'foobar')
-        self.assertEqual(random_poll.description, 'foobar')
+        random_poll.question = 'foobar'
+        self.assertEqual(random_poll.question, 'foobar')

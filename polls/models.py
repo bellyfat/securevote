@@ -4,12 +4,7 @@ from django.utils.translation import ugettext_lazy as _
 
 
 class Poll(models.Model):
-    title = models.CharField(
-            _("Title"),
-            max_length=100,
-            null=False,
-            blank=False)
-    description = models.TextField()
+    question = models.TextField()
     creator = models.OneToOneField(
             User,
             verbose_name=_("Creator"))
