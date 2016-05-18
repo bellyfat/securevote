@@ -1,3 +1,4 @@
 Django==1.9.6
 psycopg2==2.6.1
 django-material==0.7.0
+gnupg==2.0.2
