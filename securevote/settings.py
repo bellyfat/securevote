@@ -125,3 +125,4 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 INSTALLED_APPS.append('polls')
+INSTALLED_APPS.append('material')
