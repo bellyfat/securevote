@@ -8,6 +8,8 @@ class Poll(models.Model):
     creator = models.OneToOneField(
             User,
             verbose_name=_("Creator"))
+    started_at = models.DateTimeField()
+    ended_at = models.DateTimeField()
     created_time = models.DateTimeField(
             auto_now_add=True)
     modified_time = models.DateTimeField(
