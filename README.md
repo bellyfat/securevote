@@ -6,6 +6,10 @@ Voting system focused on security and privacy
 
 While learning and playing around with GnuPG project, this idea first came to mind.
 
+## Screenshot
+
+![Screenshot](./screenshot.png "Screenshot")
+
 ## Dependencies
 
 Python >= 3.5
