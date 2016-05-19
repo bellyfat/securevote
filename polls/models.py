@@ -1,9 +1,29 @@
 from django.db import models
-from django.contrib.auth.models import User
 from django.utils.translation import ugettext_lazy as _
 from django.utils import timezone
 from django.db.models import F, Sum
 from uuid import uuid4 as short_uuid
+
+
+class Creator(models.Model):
+    email = models.EmailField(
+            primary_key=True,
+            null=False,
+            blank=False)
+    gpg_home = models.FileField()
+    created_time = models.DateTimeField(
+            auto_now_add=True)
+    modified_time = models.DateTimeField(
+            auto_now=True)
+
+    def __str__(self):
+        return self.email
+
+    def validate_email(self):
+        pass
+
+    class Meta:
+        db_table = 'creators'
 
 
 class Poll(models.Model):
@@ -12,8 +32,8 @@ class Poll(models.Model):
             default=short_uuid,
             editable=False)
     question = models.TextField()
-    creator = models.OneToOneField(
-            User,
+    creator = models.ForeignKey(
+            Creator,
             verbose_name=_('creator'))
     private = models.BooleanField(default=False)
     start_time = models.DateTimeField(
@@ -66,6 +86,19 @@ class Choice(models.Model):
 
     def __str__(self):
         return self.choice_text
+
+    @property
+    def html_color_class(self):
+        if self.votes <= 5:
+            return "danger"
+        elif self.votes <= 10:
+            return "warning"
+        elif self.votes <= 15:
+            return "info"
+        elif self.votes <= 20:
+            return "success"
+        else:
+            return "primary"
 
     class Meta:
         db_table = 'choices'

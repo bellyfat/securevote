@@ -13,4 +13,4 @@ class IndexView(generic.ListView):
         return Poll.objects.filter(
                 created_time__lte=timezone.now(),
                 private=False
-                ).order_by('-created_time')[:5]
+                ).order_by('-created_time')[:10]
