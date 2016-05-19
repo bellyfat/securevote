@@ -1,12 +1,16 @@
-from django.shortcuts import render
-from django.conf import settings
-from django.core.urlresolvers import reverse
-from django.views.generic import TemplateView
+# from django.shortcuts import render
+from django.utils import timezone
+from django.views import generic
+
+from .models import Poll
 
 
-class IndexPageView(TemplateView):
+class IndexView(generic.ListView):
     template_name = 'index.html'
+    context_object_name = 'latest_poll_list'
 
-    def get_context_data(self, **kwargs):
-        context = super(IndexPageView, self).get_context_data(**kwargs)
-        return context
+    def get_queryset(self):
+        return Poll.objects.filter(
+                created_time__lte=timezone.now(),
+                private=False
+                ).order_by('-created_time')[:5]

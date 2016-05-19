@@ -1,6 +1,5 @@
 from django.db import models
 from django.contrib.auth.models import User
-from django.contrib.postgres.fields import ArrayField
 from django.utils.translation import ugettext_lazy as _
 from django.utils import timezone
 from uuid import uuid4 as short_uuid
@@ -15,6 +14,7 @@ class Poll(models.Model):
     creator = models.OneToOneField(
             User,
             verbose_name=_('creator'))
+    private = models.BooleanField(default=False)
     start_time = models.DateTimeField(
             default=timezone.now() + timezone.timedelta(hours=1))
     end_time = models.DateTimeField(
