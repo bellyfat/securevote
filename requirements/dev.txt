@@ -3,3 +3,4 @@
 model-mommy==1.2.6
 flake8==2.5.4
 pyflakes==1.0.0
+bpython==0.15
