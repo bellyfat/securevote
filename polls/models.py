@@ -101,7 +101,7 @@ class Choice(models.Model):
             return "primary"
 
     def get_vote_percentage(self):
-        return round(float(self.votes)*100/float(self.poll.total_votes), 2)
+        return round(float(self.votes)*100/float(self.poll.total_votes), 1)
 
     class Meta:
         db_table = 'choices'
