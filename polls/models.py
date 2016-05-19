@@ -100,6 +100,9 @@ class Choice(models.Model):
         else:
             return "primary"
 
+    def get_vote_percentage(self):
+        return round(float(self.votes)*100/float(self.poll.total_votes), 2)
+
     class Meta:
         db_table = 'choices'
         ordering = ['votes']

@@ -36,7 +36,7 @@
             <td>{{ poll.question }}</td>
             <td>
             {% for choice in poll.choice_set.all %}
-            <span class="label label-{{ choice.html_color_class }}">{{ choice.choice_text }} - {{ choice.votes }}</span>
+            <span class="label label-{{ choice.html_color_class }}">{{ choice.choice_text }} - {{ choice.get_vote_percentage }}%</span>
             {% endfor %}
             </td>
             <td>{{ poll.total_votes }}</td>
