@@ -14,7 +14,7 @@ class Poll(models.Model):
     question = models.TextField()
     creator = models.OneToOneField(
             User,
-            verbose_name=_('Creator'))
+            verbose_name=_('creator'))
     start_time = models.DateTimeField(
             default=timezone.now() + timezone.timedelta(hours=1))
     end_time = models.DateTimeField(
@@ -35,11 +35,15 @@ class Poll(models.Model):
 
 
 class Choice(models.Model):
+    id = models.UUIDField(
+            primary_key=True,
+            default=short_uuid,
+            editable=False)
     poll = models.ForeignKey(
             'Poll',
             on_delete=models.CASCADE)
     choice_text = models.CharField(
-            _('Text'),
+            _('text'),
             max_length=200)
     votes = models.PositiveIntegerField(default=0)
 

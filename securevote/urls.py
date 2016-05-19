@@ -15,10 +15,11 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
-from material.frontend import urls as frontend_urls
+# from material.frontend import urls as frontend_urls
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     # url(r'', include(frontend_urls)),
     url(r'', include('polls.urls')),
+    url(r'^lang/', include('django.conf.urls.i18n')),
 ]
