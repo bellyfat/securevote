@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-05-19 07:29+0500\n"
+"POT-Creation-Date: 2016-05-19 16:11+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,22 +17,14 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: creators/models.py:32
-msgid "user must have email"
-msgstr ""
-
-#: creators/models.py:42
-msgid "email address"
-msgstr ""
-
-#: creators/models.py:50 polls/models.py:17
+#: polls/models.py:37
 msgid "creator"
 msgstr ""
 
-#: creators/models.py:51
-msgid "creators"
+#: polls/models.py:83
+msgid "text"
 msgstr ""
 
-#: polls/models.py:46
-msgid "text"
+#: polls/templates/index.html:2
+msgid "Latest polls"
 msgstr ""
